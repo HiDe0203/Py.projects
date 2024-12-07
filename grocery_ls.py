@@ -7,4 +7,8 @@ def display_menu():
     print("5. Search for an item")
     print("6. Exit")
 
-display_menu()
+def main():
+    grocery_list = []
+
+    while True:
+        display_menu()
