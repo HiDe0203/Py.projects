@@ -12,7 +12,7 @@ def main():
 
     while True:
         display_menu()
-        choice = input("Enter your choice(1-6): ")
+        choice = input("Enter your choice(1-6): \n")
 
         if choice == "1":
             print("Your grocery list:")
@@ -23,7 +23,7 @@ def main():
                 print("Your Grocery List is empty.")
 
 
-        if choice == "2":
+        elif choice == "2":
             item = input("Enter the item to add: ").strip()
             if item:
                 grocery_list.append(item)
@@ -31,8 +31,31 @@ def main():
             else:
                 print("Item cannot be empty.")
 
-        if choice == "3":
+        elif choice == "3":
             item = input("Enter an item to remove: ").strip
             if item:
                 grocery_list.remove(item)
                 print(f"'{item}'removed from the list.")
+            else:
+                print(f"'{item}'not in the list.")
+
+        elif choice == "4":
+            grocery_list.sort()
+            print("Grocery List has been sorted.")
+
+        elif choice == "5":
+            item = input("Enter the name of the item to search for: ")
+            if item in grocery_list:
+                print(f"'{item}'is in the list.")
+            else:
+                print(f"'{item}'is not in the list.")
+
+        elif choice == "6":
+            print("Exiting the Grocery list.")
+            break
+
+        else:
+            print("Invalid choice, Please enter a nummber between 1-6")
+
+if __name__ == "__main__":
+    main()
